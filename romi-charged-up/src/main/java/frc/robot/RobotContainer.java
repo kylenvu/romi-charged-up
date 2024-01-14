@@ -68,7 +68,7 @@ public class RobotContainer {
             // Reset encoders on command start
             m_drivetrain::resetEncoders,
             // Start driving forward at the start of the command
-            () -> m_drivetrain.arcadeDrive(0.5, 0),
+            m_drivetrain::driveForward,
             // Stop driving at the end of the command
             (interrupted) -> m_drivetrain.arcadeDrive(0, 0),
             // End the command when the robot's driven distance exceeds the desired value
